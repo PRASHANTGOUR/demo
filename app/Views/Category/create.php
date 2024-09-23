@@ -12,7 +12,6 @@ echo $this->section('content');
 $this->db = db_connect();
 ?>
 <!--begin::Post-->
-<!-- setup branch -->
 <div class="post fs-6 d-flex flex-column-fluid" id="kt_post">
     <!--begin::Container-->
     <div class="container-xxl">
