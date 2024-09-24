@@ -432,6 +432,31 @@ License: For each use you must have a valid license purchased only from above li
                                                     <span class="menu-title">Categories</span>
                                                 </a>
                                                 <!--end:Menu link-->
+												<a class="menu-link" href="<?= url_to('StockMovementController::index');?>">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Stock Movements</span>
+                                                </a>
+												<a class="menu-link" href="<?= url_to('SupplierController::index');?>">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Suppliers</span>
+                                                </a>
+												<a class="menu-link" href="<?= url_to('PurchaseController::index');?>">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Purchase</span>
+                                                </a>
+												<a class="menu-link" href="<?= url_to('CustomerController::index');?>">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Customers</span>
+                                                </a>
+                                                <!--end:Menu link-->
                                             </div>
                                             <!--end:Menu item-->
                                         </div>

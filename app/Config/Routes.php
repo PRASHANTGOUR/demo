@@ -210,3 +210,45 @@ $routes->post('/category/update/(:num)', 'Category::update/$1');
 $routes->get('/category/delete/(:num)', 'Category::delete/$1');
 
 
+# Stock Movements Routing
+   $routes->get('/stockmovements/index', 'StockMovementController::index');
+   $routes->get('/stockmovements/create', 'StockMovementController::create');
+   $routes->post('/stockmovements/store', 'StockMovementController::store');
+   $routes->get('/stockmovements/edit/(:num)', 'StockMovementController::edit/$1');
+   $routes->post('/stockmovements/update/(:num)', 'StockMovementController::update/$1');
+   $routes->delete('stockmovements/(:num)', 'StockMovementController::delete/$1');
+
+# Suppliers Routing
+  $routes->get('/suppliers/index', 'SupplierController::index');
+  $routes->get('/suppliers/create', 'SupplierController::create');
+  $routes->post('/suppliers/store', 'SupplierController::store');
+  $routes->get('/suppliers/edit/(:num)', 'SupplierController::edit/$1');
+  $routes->post('/suppliers/update/(:num)', 'SupplierController::update/$1');
+  $routes->post('/suppliers/delete/(:num)', 'SupplierController::delete/$1');
+
+# Purchase Routing
+    $routes->get('/purchase/index', 'PurchaseController::index'); 
+    $routes->get('/purchase/create', 'PurchaseController::create'); 
+    $routes->post('/purchase/store', 'PurchaseController::store'); 
+    $routes->get('/purchase/edit/(:num)', 'PurchaseController::edit/$1'); 
+    $routes->post('/purchase/update/(:num)', 'PurchaseController::update/$1'); 
+    $routes->post('/purchase/delete/(:num)', 'PurchaseController::delete/$1'); 
+
+# Customer Routing
+   $routes->get('/customers/index', 'CustomerController::index');
+   $routes->get('/customers/create', 'CustomerController::create');
+   $routes->post('customers/store', 'CustomerController::store');
+   $routes->get('/customers/edit/(:num)', 'CustomerController::edit/$1'); 
+   $routes->post('/customers/update/(:num)', 'CustomerController::update/$1');
+   $routes->post('/customers/delete/(:num)', 'CustomerController::delete/$1');
+ 
+
+
+
+ 
+    
+
+
+
+
+
