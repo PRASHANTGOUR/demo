@@ -109,6 +109,7 @@ $this->db = db_connect();
 	/* --bs-table-bg-type: var(--bs-table-striped-bg); */
 }
  </style>
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
  
  
  <!-- Begin Page Content -->
@@ -360,7 +361,217 @@ $this->db = db_connect();
               </div>
             </div>
          </div>
+         <!-- GRAPH IMPLEMENT START -->
+          <div class="container card">
+          <div class="row">          
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="p-5">
+          <h2 class="text-center">Top Selling Items</h2>
+          <div class="h-100 p-5">
+          <div class="chart-container" style="position: relative; width: 100%;">
+          <canvas id="myPieChart"></canvas>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
 
+          <div class="container card mt-5">
+          <div class="row">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="ml-5 p-5">
+          <h2 class="text-center">Top Selling Items</h2>
+          <div class="p-5">
+          <div class="chart-container" style="position: relative; height:60vh; width: 100%;">
+                <canvas id="salesPurchasesChart"></canvas>
+            </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+
+          <div class="container card mt-5">
+          <div class="row">          
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="p-5">
+          <h2 class="text-center">Top 5 Customers</h2>
+          <div class="h-50 p-5">
+          <div class="chart-container d-flex justify-content-center" style="position: relative; height:40vh; width:100%">
+          <canvas id="myChart"></canvas>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+
+          
+          <div class="card container mt-5">
+          <div class="row">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h2 class="text-center pt-5">Recent Invoices</h2>
+                    <!--begin::Table-->
+                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_products_table">
+                        <thead>
+                            <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">													    
+                                <th class="min-w-50px">SKU</th>
+                                <th class="min-w-50px">CUSTOMER</th>
+                                <th class="min-w-50px">AMOUNT</th>
+                                <th class="min-w-50px">STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody class="fw-semibold text-gray-600">
+                            <tr>
+                                <td><a href="" class="text-primary" class="text-primary">87305915</a></td>
+                                <td>John Doe</td>
+                                <td>$1200.00</td>
+                                <td>
+                                  <button class="btn btn-sm" style="border: 1px solid red; background: #fff; color: red;">Unpaid</button>
+                                </td>                               
+                            </tr>
+                            <tr>
+                                <td><a href="" class="text-primary">87305914</a></td>
+                                <td>Victor James</td>
+                                <td>$200.00</td>
+                                <td>
+                                  <button class="btn btn-sm" style="color:green; border:1px solid green; background:#fff;">Paid</button>
+                                </td>                               
+                            </tr>
+                            <tr>
+                                <td><a href="" class="text-primary">87305913</a></td>
+                                <td>Jonathon Ronan</td>
+                                <td>$100.00</td>
+                                <td>
+                                  <button class="btn btn-sm" style="color:green; border:1px solid green; background:#fff;">Paid</button>
+                                </td>                               
+                            </tr>
+                            <tr>
+                                <td><a href="" class="text-primary">87305912</a></td>
+                                <td>Angela Carter</td>
+                                <td>$800.00</td>
+                                <td>
+                                  <button class="btn btn-sm" style="border: 1px solid red; background: #fff; color: red;">Unpaid</button>
+                                </td>                               
+                            </tr>
+                            <tr>
+                                <td><a href="" class="text-primary">87305911</a></td>
+                                <td>Josef Stalin</td>
+                                <td>$1500.00</td>
+                                <td>
+                                  <button class="btn btn-sm" style="color:green; border:1px solid green; background:#fff;">Paid</button>
+                                </td>                               
+                            </tr>
+                            <tr>
+                                <td><a href="" class="text-primary">87305910</a></td>
+                                <td>John Doe</td>
+                                <td>$120.00</td>
+                                <td>
+                                  <button class="btn btn-sm" style="border: 1px solid red; background: #fff; color: red;">Unpaid</button>
+                                </td>                               
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--end::Table-->
+                    </div>
+          </div>
+          </div>
+
+          <div class="card container mt-5">
+          <div class="row">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h2 class="text-center pt-5">Recent Sales</h2>
+                    <!--begin::Table-->
+                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_products_table">
+                        <thead>
+                            <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">													    
+                                <th class="min-w-50px">REFERENCE</th>
+                                <th class="min-w-50px">CUSTOMER</th>
+                                <th class="min-w-50px">STATUS</th>
+                                <th class="min-w-50px">GRAND TOTAL</th>
+                                <th class="min-w-50px">PAID</th>
+                                <th class="min-w-50px">DUE</th>
+                                <th class="min-w-50px">PAYMENT STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody class="fw-semibold text-gray-600">
+                            <tr>
+                                <td><a href="" class="text-primary" class="text-primary">87305928</a></td>
+                                <td>John Doe</td>
+                                <td>
+                                  <span style="padding:8px 30px; border:none;" class="alert alert-success">Paid</span>
+                                </td>    
+                                <td>$1200.00</td>
+                                <td>$1200.00</td>
+                                <td>$00.00</td>
+                                <td><button class="btn btn-sm" style="color:green; border:1px solid green; background:#fff;">Paid</button></td>
+                            </tr>
+                            <tr>
+                                <td><a href="" class="text-primary">87305927</a></td>
+                                <td>Victor James</td>
+                                <td>
+                                <span style="padding:8px 30px; border:none;" class="alert alert-success">Paid</span>
+                                </td> 
+                                <td>$1500.00</td>
+                                <td>$1500.00</td>
+                                <td>$00.00</td>
+                                <td>
+                                  <button class="btn btn-sm" style="color:green; border:1px solid green; background:#fff;">Paid</button>
+                                </td>                               
+                            </tr>
+                            <tr>
+                                <td><a href="" class="text-primary">87305915</a></td>
+                                <td>Jonathon Ronan</td>
+                                <td><span style="padding:8px 30px; border:none;" class="alert alert-danger">Unpaid</span></td>
+                                <td>$100.00</td>
+                                <td>$50.00</td>
+                                <td>$50.00</td>
+                                <td>
+                                <button class="btn btn-sm" style="border: 1px solid red; background: #fff; color: red;">Unpaid</button>                                
+                                </td>                               
+                            </tr>
+                            <tr>
+                                <td><a href="" class="text-primary">87305912</a></td>
+                                <td>Angela Carter</td>
+                                <td><span style="padding:8px 30px; border:none;" class="alert alert-danger">Unpaid</span></td>
+                                <td>$100.00</td>
+                                <td>$80.00</td>
+                                <td>$20.00</td>
+                                <td>
+                                  <button class="btn btn-sm" style="border: 1px solid red; background: #fff; color: red;">Unpaid</button>
+                                </td>                               
+                            </tr>
+                            <tr>
+                                <td><a href="" class="text-primary">87305969</a></td>
+                                <td>Josef Stalin</td>
+                                <td><span style="padding:8px 30px; border:none;" class="alert alert-success">Paid</span></td>
+                                <td>$1500.00</td>
+                                <td>$1500.00</td>
+                                <td>$1500.00</td>
+                                <td>
+                                  <button class="btn btn-sm" style="color:green; border:1px solid green; background:#fff;">Paid</button>
+                                </td>                               
+                            </tr>
+                            <tr>
+                                <td><a href="" class="text-primary">87305910</a></td>
+                                <td>John Doe</td>
+                                <td><span style="padding:8px 30px; border:none;" class="alert alert-danger">Unpaid</span></td>
+                                <td>$120.00</td>
+                                <td>$10.00</td>
+                                <td>$120.00</td>
+                                <td>
+                                  <button class="btn btn-sm" style="border: 1px solid red; background: #fff; color: red;">Unpaid</button>
+                                </td>                               
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--end::Table-->
+                    </div>
+          </div>
+          </div>
+                  
+                    <!-- GRAPH IMPLEMENT END -->
 
          <?php /* ?>
          <!-- Content Row -->
@@ -455,6 +666,134 @@ $this->db = db_connect();
        <!-- End of Main Content -->
 
     </div>
+    <script>
+        var ctx = document.getElementById('myPieChart').getContext('2d');
+        var myPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Item1', 'Item2', 'Item3', 'Item4', 'Item5'],
+                datasets: [{
+                    label: 'Top Selling Items',
+                    data: [150, 80, 200, 58, 100], // Static data for each product
+                    backgroundColor: [
+                        '#BB6BD9', // Earphones
+                        '#FCBFF8', // Laptop
+                        '#53357D', // Smartphone
+                        '#6A0DAD', // Camera
+                        '#FF7F7F'  // Tablet
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,  // Makes chart responsive
+                maintainAspectRatio: false, // Chart will resize based on container
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.label + ': ' + context.raw;
+                            }
+                        }
+                    }
+                }
+            }
+        });
 
+        var ctx = document.getElementById('salesPurchasesChart').getContext('2d');
+    var salesPurchasesChart = new Chart(ctx, {
+        type: 'bar', // Bar chart
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'], // Days of the week
+            datasets: [
+                {
+                    label: 'Sales',
+                    data: [50, 40, 60, 45, 55, 70, 50], // Sales data
+                    backgroundColor: 'rgba(75, 0, 130, 0.8)', // Deep purple color for sales
+                    borderColor: 'rgba(75, 0, 130, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Purchase',
+                    data: [70, 60, 90, 55, 80, 100, 90], // Purchase data
+                    backgroundColor: 'rgba(153, 102, 255, 0.5)', // Lighter purple for purchases
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            responsive: true, // Make it responsive
+            maintainAspectRatio: false, // Maintain layout
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + value + 'k'; // Add dollar sign and 'k' to the y-axis labels
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: '$ (thousands)', // y-axis title
+                        font: {
+                            size: 14
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top', // Position legend at the top
+                    labels: {
+                        font: {
+                            size: 14
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',  // Change this to 'pie' if you prefer a pie chart
+            data: {
+                labels: ['Customer A', 'Customer B', 'Customer C', 'Customer D', 'Customer E'],
+                datasets: [{
+                    label: 'Top 5 Customers',
+                    data: [5000, 4000, 3000, 2500, 1500],  // Static data for each customer
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)',   // Color for Customer A
+                        'rgba(54, 162, 235, 0.7)',   // Color for Customer B
+                        'rgba(255, 206, 86, 0.7)',   // Color for Customer C
+                        'rgba(75, 192, 192, 0.7)',   // Color for Customer D
+                        'rgba(153, 102, 255, 0.7)'   // Color for Customer E
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,   // Ensures that the chart is responsive
+                maintainAspectRatio: false,  // Allows the chart to resize based on container dimensions
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                    }
+                }
+            }
+        });
+    </script>
 <?php 
 echo $this->endSection();
